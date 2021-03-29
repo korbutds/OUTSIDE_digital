@@ -42,3 +42,34 @@
     font-style: normal;
 }
 
+:root {
+    --bcg-color: rgba(255,94,86,1);
+    --text-color: rgba(0, 0, 0, 1);
+    /* --main-color: rgba(234,0,41,1); */
+    --bcg-gradient: linear-gradient(255.35deg, rgba(220,49,49,1) 0.83%, rgba(255,79,79,0) 108.93%);
+    --btn-color: rgba(255,255,255,1);
+    /* --modal-bcg: rgba(255,255,255,1); */
+    --btn-color-hover: rgba(234,0,41,1);
+    /* --btn-close-color: $main-color; */
+    /* --btn-color-disabled: rgba(190, 197, 204, 1); */
+    --btn-shadow: rgba(207, 218, 231, 1);
+    --btn-shadow-hover: rgba(234, 0, 41, 0.33);
+    /* --calculate-description-color: rgba(128,128,128,1); */
+    /* --placeholder-color: rgba(190,197,204,1); */
+    /* --placeholder-border-color: rgba(223, 227, 230, 1); */
+    /* --placeholder-border-hover-color: rgba(0, 0, 0, 1); */
+    /* --placeholder-border-error-color: $main-color; */
+    /* --required-color: $main-color; */
+    /* --info-color: $main-color; */
+    /* --info-hover-color: rgba(245,58,49,1); */
+    /* --radio-bgc: rgba(238, 240, 242, 1); */
+    /* --radio-hover-bgc: rgba(223, 227, 230, 1);; */
+    /* --radio-text-color: rgba(0, 0, 0, 1); */
+    /* --radio-checked-text-color: rgba(255,255,255,1); */
+    /* --radio-checked-bcg-gradient: linear-gradient(255.35deg, rgba(220,49,49,1) 0.83%, rgba(255,79,79,0) 108.93%); */
+    /* --checkbox-checked-bcg-gradient: linear-gradient(255.35deg, rgba(220,49,49,1) 0.83%, rgba(255,79,79,0) 108.93%); */
+    /* --radio-checked-bcg: rgba(255, 94, 86, 1); */
+    /* --checkbox-checked-bcg: rgba(255, 94, 86, 1); */
+    /* --mobile-width-only: 767px; */
+    /* --salary-board: rgba(223, 227, 230, 1); */
+}

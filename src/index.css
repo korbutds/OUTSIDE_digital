@@ -2,11 +2,12 @@ body {
   position: relative;
 
   margin: 0;
-  min-height: 100vh; 
+  min-width: 320px;
 
   font-family: 'Lab Grotesque', Arial, Helvetica, sans-serif;
   font-weight: 500;
 
   background-color: var(--bcg-color);
   background-image: var(--bcg-gradient);
+  background-size: 100%;
 }

@@ -48,6 +48,7 @@
     /* --main-color: rgba(234,0,41,1); */
     --bcg-gradient: linear-gradient(255.35deg, rgba(220,49,49,1) 0.83%, rgba(255,79,79,0) 108.93%);
     --btn-color: rgba(255,255,255,1);
+    --btn-disabled: rgb(189, 196, 203);
     /* --modal-bcg: rgba(255,255,255,1); */
     --btn-color-hover: rgba(234,0,41,1);
     /* --btn-close-color: $main-color; */

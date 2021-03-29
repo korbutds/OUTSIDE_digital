@@ -1,0 +1,42 @@
+
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+
+    font-family: 'Lab Grotesque';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    color: var(--btn-color);
+
+    background-color: transparent;
+    border: 1px solid var(--btn-color);
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 44px var(--btn-shadow));
+
+    transition: all 0.2s ease-in-out;
+    }
+
+@media (min-width: 768px) {
+    .button {
+        padding: 16px 32px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+  }
+
+  .button:hover,
+  .button:focus {
+    color: var(--text-color);
+    background: var(--btn-color);
+    filter: none;
+    outline: none;
+  }
+
+  .button:disabled {
+    background-color: var(--btn-disabled);
+    color: var(--btn-color);
+    filter: none;
+  }

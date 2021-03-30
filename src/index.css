@@ -6,8 +6,11 @@ body {
 
   font-family: 'Lab Grotesque', Arial, Helvetica, sans-serif;
   font-weight: 500;
-
   background-color: var(--bcg-color);
   background-image: var(--bcg-gradient);
-  background-size: 100%;
+  transition: background 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.popup-active {
+  background: var(--active-bcg);
 }

@@ -17,10 +17,10 @@ const CalculateItem = ({count, year, onChange, reduceYears}) => {
 };
 
 CalculateItem.propTypes = {
-  count: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
-  reduceYears: PropTypes.object.isRequired
+  reduceYears: PropTypes.array.isRequired
 };
 
 export default CalculateItem;

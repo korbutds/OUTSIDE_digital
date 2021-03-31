@@ -20,7 +20,7 @@ const CalculateList = ({salary, onChange, reduceYears}) => {
 CalculateList.propTypes = {
   salary: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  reduceYears: PropTypes.object.isRequired
+  reduceYears: PropTypes.array.isRequired
 };
 
 export default CalculateList;

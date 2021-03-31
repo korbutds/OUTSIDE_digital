@@ -117,4 +117,10 @@
   }
 }
 
+@media (min-width: 1280px) {
+  .calculate__inner {
+    width: 552px;
+  }
+}
+
 

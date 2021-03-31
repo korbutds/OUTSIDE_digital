@@ -1,0 +1,18 @@
+.calculate__place {
+  width: 100%;
+}
+
+.calculate__legend {
+  margin: 0;
+  width: 55%;
+  font-weight: 700;
+}
+
+.calculate__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+

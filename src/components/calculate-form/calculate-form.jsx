@@ -2,33 +2,36 @@ import React, { useRef, useState } from 'react';
 import CurrencyInput from 'react-currency-input-field';
 import { Salary } from '../../const';
 import Button from '../button/button';
+import CalculateList from '../calculate-list/calculate-list';
 import './calculate-form.css';
 
-const CalculateForm = () => {
+const CalculateForm = ({onSubmit}) => {
   const [reduce, setReduce] = useState(`payment`);
   const [salary, setSalary] = useState(``);
+  const [reduceData, setReduceData] = useState(0)
+  const [isCalculate, setCalculateStatus] = useState(false);
   const salaryInput = useRef()
 
   const handlePaymentCalculation = () => {
     if (salary < Salary.MIN || salary > Salary.MAX || salary === undefined) {
       salaryInput.current.classList.add(`calculate__salary-input--error`)
+      setCalculateStatus(false)
+    } else {
+      setCalculateStatus(true)
+      setReduceData(salary)
     }
   }
 
   const handleSalaryChange = (value) => {
     salaryInput.current.classList.remove(`calculate__salary-input--error`)
     setSalary(value);
-    console.log(value)
   }
   const handleReduceChange = (evt) => {
     setReduce(evt.target.id);
   }
   const handleFormSubmit = (evt) => {
-    evt.preventDefault();
-    if (salary < Salary.MIN || salary > Salary.MAX || salary === undefined) {
-      salaryInput.current.classList.add(`calculate__salary-input--error`)
-    }
-    console.log(`Submit form`);
+    evt.preventDefault()
+    onSubmit()
   }
 
   return (
@@ -52,7 +55,9 @@ const CalculateForm = () => {
           />
           <small className="calculate__required">{salary === `` || salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${Salary.MIN}₽ до ${Salary.MAX}`}</small>
           <button type="button" className="calculate__info js-calc" onClick={handlePaymentCalculation} disabled={false}>Рассчитать</button>
-          <div className="calculate__place"></div>
+          <div className="calculate__place">
+            {isCalculate ? <CalculateList salary={reduceData}/> : ``}
+          </div>
         </div>
       </fieldset>
       <fieldset className="calculate__fieldset calculate__fieldset--set">
@@ -67,7 +72,7 @@ const CalculateForm = () => {
           </div>
       </div>
       </fieldset>
-      <Button type={`submit`} name={`Добавить`} classes={`calculate__submit button--submit`} onClick={handleFormSubmit}/>
+      <Button type={`submit`} name={`Добавить`} classes={`calculate__submit button--submit`} disabled={!isCalculate} onClick={handleFormSubmit}/>
     </form>
   )
 }

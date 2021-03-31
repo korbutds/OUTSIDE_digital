@@ -1,0 +1,40 @@
+.calculate__item {
+  position: relative;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--salary-board);
+}
+
+.calculate__payment {
+  padding-left: 32px;
+}
+
+.calculate__payment::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  background: white;
+  border: 1px solid var(--salary-board);
+  border-radius: 6px;
+}
+
+.calculate__checkbox:checked ~ .calculate__payment::before {
+  background: var(--checkbox-checked-bcg-gradient), var(--checkbox-checked-bcg);
+}
+
+.calculate__checkbox:checked ~ .calculate__payment::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 14px;
+  height: 11px;
+}
+
+
+

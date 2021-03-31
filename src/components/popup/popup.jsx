@@ -11,7 +11,7 @@ const Popup = ({onCloseClick}) => {
           <h2 className="calculate__title">Налоговый вычет</h2>
           <button type="button" className="calculate__close-button" onClick={onCloseClick}>Закрыть рассчёт</button>
           <p className="calculate__description">Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет не более 13% от своего официального годового дохода.</p>
-          <CalculateForm />
+          <CalculateForm onSubmit={onCloseClick}/>
         </div>
       </section>
     )

@@ -18,6 +18,7 @@ const CalculateForm = ({onSubmit}) => {
   const formRef = useRef()
 
   const handlePaymentCalculation = () => {
+    console.log(formData.salary)
     if (formData.salary < SalaryRange.MIN || formData.salary > SalaryRange.MAX || formData.salary === undefined) {
       salaryInput.current.classList.add(`calculate__salary-input--error`)
       setFormData((prevValue) => ({
@@ -94,9 +95,13 @@ const CalculateForm = ({onSubmit}) => {
             maxLength={7}
             step={1000}
             className="calculate__salary-input"
+            allowNegativeValue={false}
+            max={9999999}
+            min={0}
             required={true}
             ref={salaryInput}
             value={formData.salary}
+            allowDecimals={false}
           />
           <small className="calculate__required">{formData.salary === `` || formData.salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${SalaryRange.MIN}₽ до ${SalaryRange.MAX}`}</small>
           <button type="button" className="calculate__info js-calc" onClick={handlePaymentCalculation} disabled={false}>Рассчитать</button>

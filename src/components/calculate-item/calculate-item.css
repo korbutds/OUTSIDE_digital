@@ -32,6 +32,14 @@
   background: var(--checkbox-checked-bcg-gradient), var(--checkbox-checked-bcg);
 }
 
+.calculate__checkbox:focus  {
+  outline: none;
+}
+
+.calculate__checkbox:focus ~ .calculate__payment::before{
+  outline: 3px solid;
+}
+
 .calculate__checkbox:disabled ~ .calculate__payment::before {
   background: var(--btn-disabled);
 }

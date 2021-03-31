@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 import CurrencyInput from 'react-currency-input-field';
-import { SalaryRange } from '../../const';
+import {SalaryRange} from '../../const';
 import Button from '../button/button';
+import PropTypes from 'prop-types';
 import CalculateList from '../calculate-list/calculate-list';
 import './calculate-form.css';
 
@@ -14,43 +15,42 @@ const CalculateForm = ({onSubmit}) => {
     reduceYears: []
   });
 
-  const salaryInput = useRef()
-  const formRef = useRef()
+  const salaryInput = useRef();
+  const formRef = useRef();
 
   const handlePaymentCalculation = () => {
-    console.log(formData.salary)
     if (formData.salary < SalaryRange.MIN || formData.salary > SalaryRange.MAX || formData.salary === undefined) {
-      salaryInput.current.classList.add(`calculate__salary-input--error`)
+      salaryInput.current.classList.add(`calculate__salary-input--error`);
       setFormData((prevValue) => ({
         ...prevValue,
         isCalculate: false
-      }))
+      }));
     } else {
       setFormData((prevValue) => ({
         ...prevValue,
         isCalculate: true,
         acceptedSalary: prevValue.salary
-      }))
+      }));
     }
-  }
+  };
 
   const handleSalaryChange = (value) => {
-    salaryInput.current.classList.remove(`calculate__salary-input--error`)
+    salaryInput.current.classList.remove(`calculate__salary-input--error`);
     setFormData((prevValue) => ({
       ...prevValue,
       salary: value
-    }))
-  }
+    }));
+  };
 
   const handleReduceChange = (evt) => {
     setFormData((prevValue) => ({
       ...prevValue,
       reduceType: evt.target.id
-    }))
-  }
+    }));
+  };
 
   const handleFormSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     setFormData((prevValue) => ({
       ...prevValue,
       reduceType: `payment`,
@@ -58,26 +58,25 @@ const CalculateForm = ({onSubmit}) => {
       acceptedSalary: ``,
       isCalculate: false,
       reduceYears: []
-    }))
-    console.log(formData)
-    onSubmit()
-  }
+    }));
+    onSubmit();
+  };
 
   const handleReduceYearsChange = (evt) => {
     setFormData((prevValue) => {
-      const value = evt.target.value
+      const value = evt.target.value;
       if (!prevValue.reduceYears.includes(value)) {
         return {
           ...prevValue,
           reduceYears: [...prevValue.reduceYears, value]
-        }
+        };
       } else {
         return {
           ...prevValue,
           reduceYears: prevValue.reduceYears.filter((year) => year !== value)
-        }
+        };
       }
-    })
+    });
   };
 
   return (
@@ -120,11 +119,15 @@ const CalculateForm = ({onSubmit}) => {
             <input className="visualy-hidden calulate__type-input" type="radio" name="decrease-type" onChange={handleReduceChange} id="term" checked={formData.reduceType === `term`}/>
             <label htmlFor="term" className="calculate__type tag tag--term" id="term-label">Срок</label>
           </div>
-      </div>
+        </div>
       </fieldset>
       <Button type={`submit`} name={`Добавить`} classes={`calculate__submit button--submit`} disabled={!formData.isCalculate} onClick={handleFormSubmit}/>
     </form>
-  )
-}
+  );
+};
+
+CalculateForm.propTypes = {
+  onSubmit: PropTypes.func
+};
 
 export default CalculateForm;

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import CurrencyInput from 'react-currency-input-field';
-import { Salary } from '../../const';
+import { SalaryRange } from '../../const';
 import Button from '../button/button';
 import CalculateList from '../calculate-list/calculate-list';
 import './calculate-form.css';
@@ -11,9 +11,10 @@ const CalculateForm = ({onSubmit}) => {
   const [reduceData, setReduceData] = useState(0)
   const [isCalculate, setCalculateStatus] = useState(false);
   const salaryInput = useRef()
+  const formRef = useRef()
 
   const handlePaymentCalculation = () => {
-    if (salary < Salary.MIN || salary > Salary.MAX || salary === undefined) {
+    if (salary < SalaryRange.MIN || salary > SalaryRange.MAX || salary === undefined) {
       salaryInput.current.classList.add(`calculate__salary-input--error`)
       setCalculateStatus(false)
     } else {
@@ -31,11 +32,12 @@ const CalculateForm = ({onSubmit}) => {
   }
   const handleFormSubmit = (evt) => {
     evt.preventDefault()
+    console.log(new FormData(formRef.content).get('salary'))
     onSubmit()
   }
 
   return (
-    <form action="#" className="calculate__form" onSubmit={handleFormSubmit}>
+    <form action="#" className="calculate__form" onSubmit={handleFormSubmit} ref={formRef}>
       <fieldset className="calculate__fieldset calculate__fieldset--salary">
         <legend className="visualy-hidden">Введите данные</legend>
         <div className="calculate__data">
@@ -53,7 +55,7 @@ const CalculateForm = ({onSubmit}) => {
             ref={salaryInput}
             value={salary}
           />
-          <small className="calculate__required">{salary === `` || salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${Salary.MIN}₽ до ${Salary.MAX}`}</small>
+          <small className="calculate__required">{salary === `` || salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${SalaryRange.MIN}₽ до ${SalaryRange.MAX}`}</small>
           <button type="button" className="calculate__info js-calc" onClick={handlePaymentCalculation} disabled={false}>Рассчитать</button>
           <div className="calculate__place">
             {isCalculate ? <CalculateList salary={reduceData}/> : ``}

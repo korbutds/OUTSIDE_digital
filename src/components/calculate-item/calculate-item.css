@@ -5,7 +5,12 @@
 }
 
 .calculate__payment {
+  padding: 10px;
   padding-left: 32px;
+}
+
+.calculate__exp {
+  color: var(--calculate-description-color)
 }
 
 .calculate__payment::before {
@@ -30,10 +35,13 @@
 .calculate__checkbox:checked ~ .calculate__payment::after {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 22px;
+  left: 3px;
   display: block;
   width: 14px;
   height: 11px;
+  background-position: 50% 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.455 8.701L1.114 5.254 0 6.403 4.455 11 14 1.15 12.886 0 4.455 8.701z' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 

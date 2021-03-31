@@ -103,7 +103,7 @@ const CalculateForm = ({onSubmit}) => {
             value={formData.salary}
             allowDecimals={false}
           />
-          <small className="calculate__required">{formData.salary === `` || formData.salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${SalaryRange.MIN}₽ до ${SalaryRange.MAX}`}</small>
+          <small className="calculate__required">{formData.salary === `` || formData.salary === undefined ? `Поле обязательно для заполнения` : `Введите значение от ${SalaryRange.MIN}₽ до ${SalaryRange.MAX}₽`}</small>
           <button type="button" className="calculate__info js-calc" onClick={handlePaymentCalculation} disabled={false}>Рассчитать</button>
           <div className="calculate__place">
             {formData.isCalculate ? <CalculateList onChange={handleReduceYearsChange} salary={formData.acceptedSalary} reduceYears={formData.reduceYears}/> : `` }

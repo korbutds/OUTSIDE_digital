@@ -1,8 +1,9 @@
-# OUTSIDE_digital
-
-Это тестовое задание для компнии OUTSIDE digital
+# Тестовое задание OUTSIDE digital
 
 ## Задание
+<p align="center">
+  <img src="./cover.png" width="100%" alt="Изображение тестового задания" />
+</p>
 
 Сверстать всплывающий попап
 
@@ -43,4 +44,37 @@
 
 ## Необходимый стек
 
-по стеку можно все, но предпочтительнее React.
+По стеку можно все, но предпочтительнее React.
+
+## Установка
+
+```sh
+npm i
+```
+
+## Развертывание
+
+```sh
+npm start
+```
+
+## Тестирование
+
+```sh
+npm test
+```
+
+## Автор
+
+👋 **Корбут Дмитрий**
+
+<p align="center">
+<a href="mailto:ds.korbut@gmail.com"><img height="36" width="36" src="./mail.svg"></a>&nbsp;&nbsp;
+<a href="https://t.me/Korbutds"><img height="36" width="36" src="./telegram.svg"></a>&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/dskorbut/"><img height="36" width="36" src="./linkedIn.svg"></a>&nbsp;&nbsp;
+
+</p>
+
+<p align="center">
+      <a href="https://www.codewars.com/users/korbutds"><img height="30" src="https://www.codewars.com/users/korbutds/badges/micro"></a>
+</p>

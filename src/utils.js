@@ -21,24 +21,43 @@ export const calculatePaymentArray = (monthSalary) => {
 
 export const getNumberEnd = (number) => {
   const validNumber = !!Number(number);
+  const numberStr = number.toString();
   if (validNumber) {
-    const numberEnd = (year) => {
-      const numberStr = year.toString();
-      if (numberStr.endsWith(`3`)) {
-        return `ий`;
-      } else if (numberStr.endsWith(`2`) || numberStr.endsWith(`6`) || numberStr.endsWith(`7`) || numberStr.endsWith(`8`)) {
-        return `ой`;
-      } else {
-        return `ый`;
-      }
-    };
-
-    return (number > 10 && number < 20) ? `ый` : numberEnd(number);
+    if (number > 10 && number < 20) {
+      return `ый`;
+    } else if (numberStr.endsWith(`3`)) {
+      return `ий`;
+    } else if (numberStr.endsWith(`2`) || numberStr.endsWith(`6`) || numberStr.endsWith(`7`) || numberStr.endsWith(`8`)) {
+      return `ой`;
+    } else {
+      return `ый`;
+    }
   }
-
   return ``;
 };
 
 export const calculateExp = (year) => {
   return year === 2 ? `во ${year}-${getNumberEnd(year)} год` : `в ${year}-${getNumberEnd(year)} год`;
+};
+
+export const getThousandthSpace = (number) => {
+  const numberStr = number.toString();
+  let result = ``;
+  switch (numberStr.length) {
+    case 1:
+    case 2:
+    case 3:
+      result = numberStr;
+      break;
+    case 4:
+      result = numberStr.slice(0, 1) + ` ` + numberStr.slice(1);
+      break;
+    case 5:
+      result = numberStr.slice(0, 2) + ` ` + numberStr.slice(2);
+      break;
+    case 6:
+      result = numberStr.slice(0, 3) + ` ` + numberStr.slice(3);
+      break;
+  }
+  return result;
 };

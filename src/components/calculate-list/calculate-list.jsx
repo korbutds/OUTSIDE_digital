@@ -1,4 +1,5 @@
 import React from 'react';
+import {memo} from 'react';
 import './calculate-list.css';
 import PropTypes from 'prop-types';
 import {calculatePaymentArray} from '../../utils';
@@ -23,4 +24,4 @@ CalculateList.propTypes = {
   reduceYears: PropTypes.array.isRequired
 };
 
-export default CalculateList;
+export default memo(CalculateList);

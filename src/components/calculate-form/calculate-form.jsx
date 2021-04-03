@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import CurrencyInput from 'react-currency-input-field';
 import {SalaryRange} from '../../const';
 import Button from '../button/button';
@@ -62,7 +62,7 @@ const CalculateForm = ({onSubmit}) => {
     onSubmit();
   };
 
-  const handleReduceYearsChange = (evt) => {
+  const handleReduceYearsChange = useCallback((evt) => {
     setFormData((prevValue) => {
       const value = evt.target.value;
       if (!prevValue.reduceYears.includes(value)) {
@@ -77,7 +77,7 @@ const CalculateForm = ({onSubmit}) => {
         };
       }
     });
-  };
+  }, [formData.reduceYears]);
 
   return (
     <form action="#" className="calculate__form" onSubmit={handleFormSubmit} ref={formRef}>

@@ -10,5 +10,5 @@ it(`Renders Calculate form correctly`, () => {
     reduceYears: []
   };
   render(<CalculateItem count={mockProps.count} year={mockProps.year} onChange={mockProps.onChange} reduceYears={mockProps.reduceYears}/>);
-  expect(screen.getByText(`${mockProps.count} рублей`)).toBeInTheDocument();
+  expect(screen.getByText(`10 000 рублей`)).toBeInTheDocument();
 });
